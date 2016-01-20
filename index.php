@@ -307,7 +307,7 @@ if (is_dir($current_dir) && $handle = opendir($current_dir)) {
 					"name" => $file,
 					"date" => filemtime($current_dir . "/" . $file),
 					"size" => filesize($current_dir . "/" . $file),
-					"html" => "<li><a href=\"{$linkUrl}\" rel='lightbox[billeder]' title=\"" . htmlentities($img_captions[$file]) . "\"><img $imgopts alt='$label_loading' /></a>" . $filename_caption . "</li>");
+					"html" => "<li><a href=\"{$linkUrl}\" rel='lightbox[billeder]' title=\"" . htmlentities($img_captions[$file],ENT_COMPAT | ENT_HTML401, "UTF-8") . "\"><img $imgopts alt='$label_loading' /></a>" . $filename_caption . "</li>");
 			}
 			// Other filetypes
 			$extension = "";

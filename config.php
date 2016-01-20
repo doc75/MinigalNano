@@ -12,6 +12,11 @@
  * for the list of options, check config-default.php
  */
 
-$title = "Your Own MiniGal Nano";
+$title = "Photos familiales";
+$display_filename = 1;
+$label_home = "Albums";
+$templatefile = "darksideboard";
+$thumb_size = 300;
+$gallery_width = "90%";
 
 ?>
