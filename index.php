@@ -262,8 +262,14 @@ if (is_dir($current_dir) && $handle = opendir($current_dir)) {
 
 		// 3. LOAD FILES
 		if ($file != "." && $file != ".." && $file != "folder.jpg") {
-			if ($display_filename) {
-				$filename_caption = "<em>" . padstring($file, $label_max_length) . "</em>";
+      if ($display_filename) {
+			$cap_str = $file;
+			// check if caption exist for current file
+			if( $img_captions[$file] && strlen($img_captions[$file] ) > 0 ) {
+				$cap_str = $cap_str . " - " . $img_captions[$file];
+			}
+
+				$filename_caption = "<em>" . padstring($cap_str, $label_max_length) . "</em>";
 			} else {
 				$filename_caption = "";
 			}
