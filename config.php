@@ -13,6 +13,7 @@
  */
 
 $title = "Photos familiales";
+$author = "Guillaume Virlet";
 $display_filename = 1;
 $label_home = "Albums";
 $templatefile = "darksideboard";
