@@ -173,11 +173,11 @@ if (is_dir($current_dir) && $handle = opendir($current_dir)) {
 	if (is_readable($caption_filename)) {
 		$caption_handle = fopen($caption_filename, "rb");
 		while (!feof($caption_handle)) {
-			$caption_line = fgetss($caption_handle);
+			$caption_line = fgets($caption_handle);
 			if (empty($caption_line)) {
 				continue;
 			}
-			list($img_file, $img_text) = explode('|', $caption_line);
+			list($img_file, $img_text) = explode('|', strip_tags($caption_line));
 			$img_captions[$img_file] = trim($img_text);
 		}
 		fclose($caption_handle);
